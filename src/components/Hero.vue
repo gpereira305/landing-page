@@ -22,39 +22,40 @@
               <img src="../assets//logo_wht.png" alt="logo">
             </header>
 
-            <!-- BG -->
+            <!-- Main background -->
             <div class="info-form">
-                <div class="info-text">
+                <div class="info-text" data-aos="fade-right">
                   <h4>Se Prepare com o ceisc!</h4>
                   <h1>Aprenda como se preparar melhor para o Exame da OAB</h1>
 
                   <div class="detailed-info">
-
                     <div class="info-group">
-                      <span>Início:</span>
-                      <span>25/05/2021</span>
+                      <p>Início:</p>
+                      <p>25/05/2021</p>
                     </div>
                     <div class="info-group">
-                      <span>Valor:</span>
-                      <span>Curso Gratuito</span>
+                      <p>Valor:</p>
+                      <p>Curso Gratuito</p>
                     </div>
                     <div class="info-group">
-                      <span>Assista aonde:</span>
-                      <span>Plataforma Ceisc</span>
+                      <p>Assista aonde:</p>
+                      <p>Plataforma Ceisc</p>
                     </div>
                       <div class="info-group">
                         <div>
                             <span><i class="fas fa-chevron-right"></i></span>
-                            <span><i class="fas fa-chevron-right"></i></span>
-                            <span><i class="fas fa-chevron-right"></i></span>
+                            <span><i class="fas fa-chevron-right middle"></i></span>
+                            <span><i class="fas fa-chevron-right last"></i></span>
                         </div>
                       </div>
                   </div>
                 </div>
- 
-                  <form action="#">
-                    <h3>Inscreva-se e fique por dentro!</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi eveniet, perspiciatis sunt fuga nemo quod soluta dignissimos aliquid nihil corporis?</p>
+                  <!-- Form  -->
+                  <form action="#" data-aos="zoom-in-left" data-aos-duration="1500">
+                    <h3>Inscreva-se e fique por dentro</h3>
+                    <p>
+                      Cadastre-se para receber conteúdos exclusivos sobre como se preparar melhor para esse grande dia. Não fique de fora.
+                    </p>
                     <input  name="name" ref="name"  type="text" placeholder="Nome Completo" required> 
                     <input  name="email" ref="email"  type="email" placeholder="E-mail" required>   
                     <button @click="handleSubmit"  type="button">
@@ -65,15 +66,17 @@
       </section>
 </template>
 
-<script>
+/* ============   JAVASCRIPT ==========  */
+<script> 
+
 export default {
   name: "Hero", 
 
   data(){
-   return {
+       return {
        name: "",
        email: ""
-   }
+      }
   },
 
   methods: {  
@@ -84,9 +87,10 @@ export default {
           alert("E-mail é obrigatório") 
 
         }else{
+          // displays a successful message for 3 seconds
           const showMsg = document.querySelector(".overlay-confirmation");  
           showMsg.style.display = "flex";  
-         setTimeout(() => { 
+           setTimeout(() => { 
            showMsg.style.display = "none";
            this.$refs.name.value = "" ;
            this.$refs.email.value = "" ;
@@ -99,7 +103,10 @@ export default {
 }
 </script>
 
+
+/* ============   STYLES ==========  */
 <style>
+
 
 .overlay{
   position: absolute;
@@ -127,7 +134,7 @@ export default {
 }
 
 .overlay-confirmation .modal{
-  background: #fff;
+  background: var(--brand-black-100);
   width: 500px;
   height: 400px;
   border-radius: 5px;
@@ -157,7 +164,7 @@ export default {
     display: flex;
     justify-content: center;
     font-size: 5rem;
-    color: #00956A;
+    color: var(--brand-success);
     margin-bottom: 10rem;
 
 }
@@ -191,26 +198,30 @@ export default {
 
 .info-form .info-text{
   width: 100%;
+  margin-top: 70px;
 
 }
 
 .info-form .info-text h4{
-  color: #FFB100;
+  color: var(--brand-warning);
   text-transform: uppercase;
   font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .info-form .info-text h1{
     line-height: 1.3;
-    color: #fff;
+    color: var(--brand-black-100);
     font-size: 4.5rem;
     width: 83%;
+    font-family: 'Lexend', sans-serif; 
+    font-weight: 800;
 }
 
 .info-form form{
     display: flex;
     flex-direction: column;
-    background: #fff;
+    background: var(--brand-black-100);
     padding: 3.5rem;
     height: 550px;
     border-radius: 10px;
@@ -220,31 +231,37 @@ export default {
 .info-form form h3{
     margin-top: 0;
     font-size: 2rem;
-    text-align: center;
+    text-align: left;
     margin-bottom: 0;
+    font-weight: 600;
+    font-family: 'Quicksand', sans-serif; 
 }
 
 .info-form form p{
-  margin-bottom: 5rem;
+    margin-bottom: 4rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Quicksand', sans-serif; 
 }
 
 .info-form form input{ 
   height: 70px;
   outline: none;
   margin-bottom: 2rem;
-  border: 1.8px solid #737380;
+  border: 1.9px solid var(--brand-black-300);
   border-radius: 5px;
   font-size: 1.2rem;
-  padding: 0 10px;
-  color: #737380;
+  padding: 0 30px;
+  color: var(--brand-black-600);
 }
 
 .info-form form input:focus{
-   border: 2px solid #004FFF;
+   border: 2px solid var(--brand-blue);
 }
 
 .info-form form input::placeholder{
-  color: #737380;
+  color: var(--brand-black);
+
 }
 
 .info-form form input:last-of-type{
@@ -256,8 +273,8 @@ export default {
   cursor: pointer;
   outline: none;
   border: none;
-  color: #fff;
-  background: #00956A;
+  color: var(--brand-black-100);
+  background: var(--brand-success);
   font-size: 1.2rem;
   text-transform: uppercase;
   transition: all ease .4s;
@@ -265,7 +282,7 @@ export default {
 }
 
 .info-form button:hover{
-  background: #017a58;
+  background: var(--brand-success);
 }
 
 .detailed-info{
@@ -279,13 +296,219 @@ export default {
     flex-direction: column;
 }
 
-.info-group span{
-  color: #fff;
+.info-group p{
+  color: var(--brand-black-100);
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.info-group p:nth-of-type(2){
+  font-weight: 500;
 }
 
 .info-group .fas{
   font-size: 2.5rem;
-  color: #6699cc;
+  color: #6c96f5;
 }
+
+.info-group .fas.middle{
+  color: rgb(191 208 243 / 97%);
+}
+.info-group .fas.last{
+  color: var(--brand-black-100);
+}
+
+/*=========  1450px ============= */
+@media screen and (max-width: 1450px) { 
+    .info-form .info-text h1{
+      font-size: 3.5rem;
+    }
+    .info-form form {
+      height: 480px;
+      width: 670px;
+    }
+    .info-form form h3 {
+      font-size: 1.7rem;
+    }
+
+    .info-form form p{
+      margin-bottom: 2rem;
+    }
+
+    .detailed-info {
+      grid-template-columns: 20% 20% 30% 15%;
+    }
+    .info-group p { 
+        font-size: 1rem;
+    }
+    .info-group .fas{
+      font-size: 2rem;
+    }
+
+}
+
+/*=========  1180px ============= */
+@media screen and (max-width: 1180px){
+  .info-form .info-text h4 {  
+    font-size: 1.2rem; 
+  }
+    .info-form form {
+      height: 450px;
+      margin-top: 7%;
+    }
+
+    .info-form .info-text h1 {
+      font-size: 3rem;
+    }
+    .detailed-info { 
+    display: flex;
+    flex-direction: column;
+    }
+ 
+   .detailed-info .info-group { 
+    padding-bottom: 13px; 
+   }
+} 
+
+/*=========  990px ============= */
+@media screen and (max-width: 990px){
+    .main-section img { 
+      max-width: 200px; 
+      height: 48px;
+    }
+    .info-form { 
+      display: flex;
+      flex-direction: column; 
+      height: 130vh;
+      margin-bottom: 10%;
+    }
+    .info-form form{
+      width: 500px;
+      margin: auto;
+    }
+    .info-form .info-text { 
+      margin-bottom: 10%;
+    }
+   .detailed-info{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between  ;
+   }
+    .main-section{
+      background-image: none;
+      height: auto;
+    }
+    .overlay { 
+      height: 155vh;
+    } 
+}
+
+/*=========  690px ============= */
+@media screen and (max-width: 690px){
+  .info-form form {
+      width: 80%;
+      height: 400px;
+      padding: 2rem;
+   }
+   .info-form form h3 {
+      font-size: 1.5rem;
+   }
+   .info-form form p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+  }
+  .info-form form input:last-of-type {
+      margin-bottom: 20px;
+  }
+  .detailed-info {
+      grid-template-columns: 25% 25% 36% 13%;
+  }
+  .overlay-confirmation .modal{
+    width: 70%;
+    height: 350px;
+  }
+  .modal .check-sign {
+    margin-bottom: 7rem;
+  }
+  .modal:first-child div { 
+       margin-bottom: 4rem;
+  }
+}
+
+/*========= 520px ============= */
+@media screen and (max-width: 520px){
+  .main-section img {
+    max-width: 180px; 
+  }
+  .info-form .info-text h1 { 
+    font-size: 3rem;
+    width: 100%; 
+  }
+  .info-form form input,
+  .info-form button {
+    font-size: 1rem;
+  } 
+  .info-group p {
+    font-size: .8rem;
+  }
+  .info-group .fas {
+   font-size: 1.5rem;
+  }
+  .modal .check-sign {
+    font-size: 4.5rem;
+  }
+   .modal h2 {
+     font-size: 1.5rem;
+   }
+   .modal p {
+     font-size: 1rem;
+   }
+}
+
+/*========= 420px ============= */
+@media screen and (max-width: 420px){
+  .overlay { 
+    height: 173vh;
+  } 
+  .overlay-confirmation .modal {
+    width: 76%;
+    height: 300px;
+  }
+  .info-form{ 
+     height: 149vh;
+  }
+   
+  .info-form form { 
+    margin: 10px auto;
+  }
+  .info-form .info-text h1 {
+    font-size: 2.5rem; 
+  } 
+  .detailed-info .info-group:last-child { 
+    display: none;
+  }
+  .modal:first-child div {
+    margin-bottom: 3rem;
+  }
+  .modal h2 {
+    font-size: 1.3rem;
+  }
+  .modal .check-sign {
+    font-size: 4rem;
+  }
+
+}
+
+/*========= 320px ============= */
+@media screen and (max-width: 320px) {
+    .overlay { 
+       height: 205vh;
+    }   
+    .info-form {
+      height: 178vh;
+    }
+
+}
+
 
 </style>

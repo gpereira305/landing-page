@@ -29,6 +29,8 @@
   </section>
 </template>
 
+
+/* ============   JAVASCRIPT ==========  */
 <script>
 export default {
     name: "Footer",
@@ -36,7 +38,10 @@ export default {
 }
 </script>
 
+
+/* ============   STYLES ==========  */
 <style>
+
 .footer{
   margin: 0 5%;
 }
@@ -54,15 +59,14 @@ export default {
 }
 
 .footer .social-media{
-  display: flex;
-  width: 35%;
+  display: flex; 
   justify-content: space-between;
   align-items: center;
 } 
 
 .footer .social-media h4{ 
     margin-bottom: 0;
-    color: #004FFF;
+    color: var(--brand-blue);
     font-weight: 500;
 }
 
@@ -70,11 +74,50 @@ export default {
     text-decoration: none;
     font-size: 1.3rem;
     margin: 0 15px;
-    color: #404040;
+    color: var(--brand-black-600);
 } 
 
 
 .social-media .media-links a:last-child{
     margin-right: 0;
 }
+
+/*=========   990px ============= */
+@media screen and (max-width:  990px){
+    .footer img {
+      max-width: 120px; 
+   }
+   .footer .social-media h4{
+     font-size: 1rem;
+   }
+   .social-media .media-links a { 
+      font-size: 1rem;
+      margin: 0 12px; 
+   }
+}
+
+ 
+/*=========  690px ============= */
+@media screen and (max-width: 690px){
+  .footer .social-media {  
+      flex-direction: column;
+  }
+
+}
+
+/*=========  420px ============= */
+@media screen and (max-width: 420px){
+  .footer footer {  
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+   }
+
+.footer img {
+    max-width: 110px;
+    margin-bottom: 15px;
+  }
+}
+ 
+
 </style>

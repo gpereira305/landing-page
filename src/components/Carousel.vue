@@ -42,30 +42,29 @@
 </section>
 </template>
 
+
+/* ============   JAVASCRIPT ==========  */
 <script> 
 
 export default {
-    name: "Carousel", 
+    name: "Carousel",  
 }
-
 
 </script>
 
-<style>
 
+/* ============   STYLES ==========  */
+<style>
  .carousel-component{
     display: flex;
     flex-direction: column; 
     margin-bottom: 5%; 
  }
-
- .carousel-component:first-child div{
-     margin-top: 20%;
- }
+ 
 
 .carousel-component h3{
     margin: 47px 5%;
-    color: #004FFF;
+    color: var(--brand-blue);
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
     font-size: 2rem;
@@ -90,16 +89,16 @@ export default {
  }
 
  .carousel-component .teacher-name{
-    background: blue;
+    background: var(--brand-blue-800);
     padding: 15px;
-    width: 51%; 
+    width: 65%; 
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     border-top-left-radius: 25px;
     margin-top: -19px;
     z-index: 1;
     font-weight: 400;
-    color: #fff;
+    color: var(--brand-black-100);
     font-size: 1.2rem;
  } 
 
@@ -109,17 +108,17 @@ export default {
     padding: 14px;
     width: 20px;
     height: 20px;
-    border: 2px solid #004FFF;
-        top: 134.5px;
+    border: 2px solid var(--brand-blue);
+    top: 134.5px;
  }
 
  .carousel-component .elipse-icon{
     position: absolute; 
-    border: 1px solid #004FFF; 
+    border: 1px solid var(--brand-blue); 
     transform: rotate(180deg);
     display: block;    
     width: 50px;
-    background: #004FFF;
+    background: var(--brand-blue);
  }
  .carousel-component .elipse-icon.left{
     top: 136.2px;
@@ -127,27 +126,91 @@ export default {
  }
  .carousel-component .elipse-icon.right{ 
     right: 35px;
-    bottom: 240.5px;
- }
-
- /* .carousel-component .arrow{
-   position: absolute;
-   left: 100%;
-   right: -75%;
-   top: 50%;
-   bottom: 50%;
-   border: 3px solid #004FFF;
-   box-sizing: border-box;
-   transform: rotate(180deg);
-   display: block;
- } */
+    bottom: 171px;;
+ } 
 
  svg:not(:root){
    position: absolute;
     left: 19px;
- }
-
- .uk-icon:not(.uk-preserve) [stroke*='#']:not(.uk-preserve){
-   stroke: #004FFF;
+    color:  var( --brand-blue);
  } 
+ 
+
+/*=========  1180px ============= */
+@media screen and (max-width: 1180px){
+    .carousel-component .carrousel-img {
+        height: 200px; 
+        max-width: 200px;
+   }
+   .carousel-component .teacher-name {
+        padding: 9px; 
+        font-size: 1rem;
+   }
+   .carousel-component .elipse-icon.right {
+       bottom: 86px;
+  }
+
+}
+
+/*=========  990px ============= */
+@media screen and (max-width: 990px){ 
+    .carousel-component h3 {
+    margin: 35px 5%; 
+    font-size: 1.7rem;
+  }
+}
+
+/*=========  706px ============= */
+@media screen and (max-width: 706px){
+    .carousel-component .elipse-icon.right {
+        bottom: 109px;
+    }
+}
+
+/*=========  690px ============= */
+@media screen and (max-width: 690px){
+    .carousel-component .carrousel-img {
+        height: 150px;
+        max-width: 150px;
+    }
+    .carousel-component .teacher-name {
+        padding: 10px;
+        width: 50%;
+        font-size: .95rem;
+    }
+    .carousel-component .elipse-icon.right {
+       bottom: 36px;
+    }
+    .carousel-component .prev, 
+    .carousel-component .next,
+    .carousel-component .elipse-icon.left,
+    .carousel-component .elipse-icon.right {
+        top: 50%;
+        bottom: auto;
+    }
+}
+ 
+
+/*========= 520px ============= */
+@media screen and (max-width: 520px){
+    .carousel-component h3 {
+        margin: 30px 5%;
+        font-size: 1.3rem;
+        text-align: center;
+   }
+   .carousel-component .teacher-name {
+        padding: 15px;
+        width: 33%;
+   }
+     .uk-slider-items:not(.uk-grid){
+      width: 183vw;
+   }
+}
+ /*========= 420px ============= */
+@media screen and (max-width: 420px){
+      .carousel-component .teacher-name { 
+        font-size: .85rem;
+   }
+}
+ 
 </style>

@@ -23,22 +23,24 @@
 </template>
 
 
+/* ============  JAVASCRIPT ==========  */
+<script> 
 
-
-
-<script>
 export default {
-  name: "HeroBottom", 
+  name: "HeroBottom",  
+  
 }
 </script>
 
-<style>
-.hero-bottom{
-  position: absolute; 
+
+/* ============   STYLES  ==========  */
+<style> 
+
+.hero-bottom{ 
   width: 100%;
-  background: #004FFF;
-  margin: auto;
-  /* margin-top: 8rem; */
+  background: var(--brand-blue);
+  margin: auto; 
+  height: 45vh;
 
 }
 
@@ -59,7 +61,48 @@ export default {
 }
 
 .bottom-text p{
-    color: #fff;
+    color: var(--brand-black-100);
+}
+
+
+/*=========  990px ============= */
+@media screen and (max-width: 990px){
+    .bottom-text {
+      display: flex;
+      grid-gap: 0;
+    } 
+    .bottom-text .text-group2 {
+      padding-left: 0;
+   }
+}
+
+
+/*========= 520px ============= */
+@media screen and (max-width: 520px){
+   .bottom-text { 
+    flex-direction: column;
+  }
+  .bottom-text p{
+      font-size: .9rem;
+   }
+  .bottom-text .text-group{
+    padding-right: 0;
+  }
+}
+
+
+/*========= 420px ============= */
+@media screen and (max-width: 420px){
+   .hero-bottom{
+     height: 45vh;
+   }
+}
+
+/*========= 320px ============= */
+@media screen and (max-width: 320px){
+  .hero-bottom { 
+       height: 60vh;
+  }
 }
 
 
