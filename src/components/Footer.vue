@@ -2,7 +2,7 @@
   <section class="footer">
         <footer>
             <span>
-                <img src="../assets//logo.png" alt="logo">
+                <img src="../assets/logo.png" alt="logo">
             </span>
 
             <div class="social-media"> 

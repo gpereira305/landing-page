@@ -87,7 +87,7 @@ export default {
           alert("E-mail é obrigatório") 
 
         }else{
-          // displays a successful message for 3 seconds
+          // On submit, shows a successful message for 3 seconds 
           const showMsg = document.querySelector(".overlay-confirmation");  
           showMsg.style.display = "flex";  
            setTimeout(() => { 
