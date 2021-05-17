@@ -4,7 +4,7 @@
 # Montagem do layout
 Para deixar o projeto pronto utilizei o framework Javascript VueJS, não utilizei SASS pois como não o uso com frequência, inicialmente estava me atrasando então optei por terminar apenas com CSS.
 
-# Componetização
+# Componentização
 Cada componente representa uma parte específica do projeto, poderia ter mais componentes mas  se tratando de um projeto relativamente simples não achei tão importante deixar muito componentizado.
 
 # Propriedades utilizadas para a responsividade
